@@ -1,0 +1,11 @@
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\WebApplication1.dll.config
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\WebApplication1.dll
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\WebApplication1.pdb
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\EntityFramework.dll
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\EntityFramework.SqlServer.dll
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\EntityFramework.xml
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\bin\EntityFramework.SqlServer.xml
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\obj\Debug\WebApplication1.dll
+c:\users\steve\documents\visual studio 2013\Projects\Assignment3\WebApplication1\obj\Debug\WebApplication1.pdb

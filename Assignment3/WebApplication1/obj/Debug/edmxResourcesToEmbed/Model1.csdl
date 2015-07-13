@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShowTrackerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Fan">
+    <Key>
+      <PropertyRef Name="FanKey" />
+    </Key>
+    <Property Name="FanKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FanName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FanEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FanDateEntered" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FanLogins" Relationship="Self.FK__FanLogin__FanKey__300424B4" FromRole="Fan" ToRole="FanLogin" />
+  </EntityType>
+  <EntityType Name="FanLogin">
+    <Key>
+      <PropertyRef Name="FanLoginKey" />
+    </Key>
+    <Property Name="FanLoginKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FanKey" Type="Int32" />
+    <Property Name="FanLoginUserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FanLoginPasswordPlain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FanLoginRandom" Type="Int32" Nullable="false" />
+    <Property Name="FanLoginHashed" Type="Binary" MaxLength="500" FixedLength="false" />
+    <Property Name="FanLoginDateAdded" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Fan" Relationship="Self.FK__FanLogin__FanKey__300424B4" FromRole="FanLogin" ToRole="Fan" />
+  </EntityType>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="LoginHistorykey" />
+    </Key>
+    <Property Name="LoginHistorykey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginHistoryDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK__FanLogin__FanKey__300424B4">
+    <End Role="Fan" Type="Self.Fan" Multiplicity="0..1" />
+    <End Role="FanLogin" Type="Self.FanLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fan">
+        <PropertyRef Name="FanKey" />
+      </Principal>
+      <Dependent Role="FanLogin">
+        <PropertyRef Name="FanKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShowTrackerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fans" EntityType="Self.Fan" />
+    <EntitySet Name="FanLogins" EntityType="Self.FanLogin" />
+    <EntitySet Name="LoginHistories" EntityType="Self.LoginHistory" />
+    <AssociationSet Name="FK__FanLogin__FanKey__300424B4" Association="Self.FK__FanLogin__FanKey__300424B4">
+      <End Role="Fan" EntitySet="Fans" />
+      <End Role="FanLogin" EntitySet="FanLogins" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

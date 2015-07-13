@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShowTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fan">
+    <Key>
+      <PropertyRef Name="FanKey" />
+    </Key>
+    <Property Name="FanKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FanName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FanEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FanDateEntered" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FanLogin">
+    <Key>
+      <PropertyRef Name="FanLoginKey" />
+    </Key>
+    <Property Name="FanLoginKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FanKey" Type="int" />
+    <Property Name="FanLoginUserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FanLoginPasswordPlain" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="FanLoginRandom" Type="int" Nullable="false" />
+    <Property Name="FanLoginHashed" Type="varbinary" MaxLength="500" />
+    <Property Name="FanLoginDateAdded" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="LoginHistorykey" />
+    </Key>
+    <Property Name="LoginHistorykey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="LoginHistoryDateTime" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__FanLogin__FanKey__300424B4">
+    <End Role="Fan" Type="Self.Fan" Multiplicity="0..1" />
+    <End Role="FanLogin" Type="Self.FanLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fan">
+        <PropertyRef Name="FanKey" />
+      </Principal>
+      <Dependent Role="FanLogin">
+        <PropertyRef Name="FanKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShowTrackerModelStoreContainer">
+    <EntitySet Name="Fan" EntityType="Self.Fan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FanLogin" EntityType="Self.FanLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginHistory" EntityType="Self.LoginHistory" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__FanLogin__FanKey__300424B4" Association="Self.FK__FanLogin__FanKey__300424B4">
+      <End Role="Fan" EntitySet="Fan" />
+      <End Role="FanLogin" EntitySet="FanLogin" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

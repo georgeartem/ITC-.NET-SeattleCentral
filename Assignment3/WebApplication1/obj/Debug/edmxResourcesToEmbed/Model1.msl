@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShowTrackerModelStoreContainer" CdmEntityContainer="ShowTrackerEntities">
+    <EntitySetMapping Name="Fans">
+      <EntityTypeMapping TypeName="ShowTrackerModel.Fan">
+        <MappingFragment StoreEntitySet="Fan">
+          <ScalarProperty Name="FanKey" ColumnName="FanKey" />
+          <ScalarProperty Name="FanName" ColumnName="FanName" />
+          <ScalarProperty Name="FanEmail" ColumnName="FanEmail" />
+          <ScalarProperty Name="FanDateEntered" ColumnName="FanDateEntered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FanLogins">
+      <EntityTypeMapping TypeName="ShowTrackerModel.FanLogin">
+        <MappingFragment StoreEntitySet="FanLogin">
+          <ScalarProperty Name="FanLoginKey" ColumnName="FanLoginKey" />
+          <ScalarProperty Name="FanKey" ColumnName="FanKey" />
+          <ScalarProperty Name="FanLoginUserName" ColumnName="FanLoginUserName" />
+          <ScalarProperty Name="FanLoginPasswordPlain" ColumnName="FanLoginPasswordPlain" />
+          <ScalarProperty Name="FanLoginRandom" ColumnName="FanLoginRandom" />
+          <ScalarProperty Name="FanLoginHashed" ColumnName="FanLoginHashed" />
+          <ScalarProperty Name="FanLoginDateAdded" ColumnName="FanLoginDateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginHistories">
+      <EntityTypeMapping TypeName="ShowTrackerModel.LoginHistory">
+        <MappingFragment StoreEntitySet="LoginHistory">
+          <ScalarProperty Name="LoginHistorykey" ColumnName="LoginHistorykey" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginHistoryDateTime" ColumnName="LoginHistoryDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

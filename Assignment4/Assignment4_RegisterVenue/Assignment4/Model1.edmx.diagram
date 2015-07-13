@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06f806d4fac1485ca150dc75162ea152" Name="Diagram1">
+        <EntityTypeShape EntityType="ShowTrackerModel.Artist" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowTrackerModel.Show" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowTrackerModel.ShowDetail" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowTrackerModel.Venue" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShowTrackerModel.VenueLogin" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="ShowTrackerModel.FK__ShowDetai__Artis__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ShowTrackerModel.FK__Show__VenueKey__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShowTrackerModel.FK__ShowDetai__ShowK__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="ShowTrackerModel.FK__VenueLogi__Venue__35BCFE0A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
